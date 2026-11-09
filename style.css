@@ -29,3 +29,12 @@ button:hover{background:var(--accent);border-color:var(--accent)}
 .fig .cap{padding:9px 11px;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}
 .fig .cap b{color:var(--ink);font-weight:600}
 footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:8px}
+.card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);background:#fff;border-radius:2px;padding:16px 16px 14px}
+.card:hover{border-color:var(--accent)}
+.card .ct{font-size:16px;font-weight:600;margin-bottom:6px}
+.card .cd{font-size:14px;color:var(--mute);line-height:1.5;margin-bottom:12px}
+.tag{display:inline-block;font:600 10px/1 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);color:var(--mute);border-radius:2px}
+.tag-open{color:#2f6b3f;border-color:#bcd8c4}
+.tag-dev{color:#8a5a2b;border-color:#e0c9ab}
+.crumb{font-size:14px;margin-bottom:22px}
