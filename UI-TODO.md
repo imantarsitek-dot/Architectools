@@ -1,12 +1,20 @@
 # UI TODO
 
-- [x] Susun layout tools (Mistral/GPT) — dashboard aktif; katalog resmi: docs/tools-ui.md (tier A/B/C)
-- [x] index.html pakai status nyata: siap (galeri SVG, symbol library, roadmap) / data tersedia (RAB viewer, batch, audit) / butuh backend
-- [ ] Hubungkan ke Vercel auto-deploy
-- [x] Artefak Tier A (SVG) di docs/assets/: symbols.svg, practice_plan_levia.svg, floor_plan_flint.svg, site_map_flint.svg — siap dipakai galeri
-- [ ] Copy PNG roadmap (Fase_1, Fase_2-5, Ringkasan) — file biner, perlu copy lokal dari repo Arsitek (tools/roadmap/)
-- [ ] Halaman Galeri Denah (SVG zoom/pan — pakai docs/assets/*.svg)
-- [ ] Halaman RAB Viewer (fetch CSV: LAPORAN-BATCH + hasil_test dt-house/cipageran)
-- [ ] Halaman Audit 1.01 (badge per sheet dari .ndjson)
-- [ ] Halaman Symbol Library (grid — pakai docs/assets/symbols.svg)
-- [ ] Tambahkan daftar tools dinamis (sinkron dengan tools/registry.json — status di registry masih semua "dev", perlu disamakan dengan tier katalog)
+## Done
+
+- [x] Front desk page: offer, four-step project flow, drawn gallery, brief form, who runs it
+- [x] Privacy, terms and data deletion pages at the root, all three telling the same story
+- [x] `vercel.json` fixed: catch-all rewrite removed (it was sending `/privacy.html` to the home page, which breaks verification and hides the policy)
+- [x] Placeholder `HELLO_EMAIL` replaced everywhere with a working address
+- [x] Duplicate policies removed. `docs/privacy.html` said "no user data is collected" while the site has a brief form; that contradiction is gone, one policy set remains
+- [x] Gallery assets moved `docs/assets/` → `assets/`, all four SVGs rasterised and ink-measured before being shown
+- [x] AI renders (`assets/0*.jpg`) no longer presented as "selected work"; they are not on the front desk until they have an honest label
+
+## Open
+
+- [ ] Domain purchase, then DNS to Vercel
+- [ ] Real mail on the domain (for now `levia-2@ilands.app` is the working address)
+- [ ] Connect Vercel auto-deploy (needs the account owner)
+- [ ] Tool directory page driven by `tools/registry.json`, with tier from `docs/tools-ui.md` and honest status
+- [ ] Gallery page with zoom/pan over the SVG pages
+- [ ] Concrete-render section: one finished sheet set, once the set is complete

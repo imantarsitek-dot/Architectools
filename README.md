@@ -1,44 +1,33 @@
-# Architectools — Portal Tools Arsitek
+# Architectools
 
-Repo publik untuk situs **Architectools**: vitrin tools dan hasil kerja tim arsitek AI.
-Agent utama: **Levia** (arsitek — denah via SVG), dengan tim: Grok, hermes, MiniMax, antigravity, GPT, Mistral.
+Public site for the design work: floor plans, sections, junction details, and (later) cost sheets.
 
-## Struktur repo
+Agent: **Levia** — AI designer, under a human principal in Indonesia.
 
-- `index.html` — dashboard publik: Tool Directory (status per tools) + AI Workflow + Integrasi
-- `docs/` — sitas GitHub Pages (privacy.html, data-deletion.html untuk verifikasi Meta/Google)
-- `docs/tools-ui.md` — katalog resmi tools untuk UI (klasifikasi Tier A/B/C)
-- `UI-TODO.md` — daftar tugas pengembangan UI berjalan
+## What is here
 
-## Sumber tools
+| File | What it is |
+|---|---|
+| `index.html` | Front desk: what is offered, how a project runs, gallery of drawn pages, brief form |
+| `privacy.html` | Privacy policy (what is collected, how long, how to object) |
+| `terms.html` | Terms of service (scope, price, revisions, what the drawings are not) |
+| `data-deletion.html` | Data deletion instructions, written so a request can actually be carried out |
+| `style.css` | One stylesheet, no framework, no scripts |
+| `assets/` | Drawn SVG pages (plans, site map, symbol library) — geometry, not generated images |
+| `docs/` | Internal notes: `SPEC.md`, `tools-ui.md` |
 
-Semua tools, data, dan hasil kerja asli ada di repo privat `imantarsitek-dot/Arsitek`
-(sumber kebenaran). Repo ini hanya vitrin — menampilkan hasil, bukan tempat kerja.
+## Verified pages, not claimed ones
 
-## Klasifikasi tools (ringkas)
+Every page in the gallery is a real file in `assets/` and renders: each SVG was rasterised and its ink measured (4–7 % of the frame is drawn content, none blank). The brief form sends to `levia-2@ilands.app` through the visitor's own mail client; there is no analytics, no tracking, no cookie, and no backend in this repo.
 
-| Tier | Arti | Contoh |
-|---|---|---|
-| A | Siap tampil — artefak statis | Galeri denah SVG, symbol library, roadmap |
-| B | Data tersedia — render JS ringan | RAB viewer, batch test, audit 1.01, digest |
-| C | Butuh backend | RAB engine, digest builder, invoice generator |
-
-Rincian: lihat `docs/tools-ui.md`.
+Status claims follow the rule in `docs/SPEC.md`: a tool is listed as ready only when a visitor can actually use it.
 
 ## Deploy
 
-- Frontend: Vercel (auto-deploy dari main)
-- Hosting alternatif: GitHub Pages (folder `docs/`)
-- Secret/API key tidak disimpan di frontend — hanya di server/secret manager
+- Vercel, auto-deploy from `main`. `vercel.json` is static with `cleanUrls` and no catch-all rewrite, so `/privacy`, `/terms` and `/data-deletion` serve their own pages instead of the home page.
+- GitHub Pages can also serve the repository root.
 
-## Prinsip
+## Related
 
-1. Situs hanya menampilkan hasil mesin (repo privat); tidak pernah lebih maju dari mesinnya.
-2. Compute berat tetap lokal (gratis, deterministik); sitas hanya render.
-3. Kebijakan model harian: GLM (Levia rutin), Grok (task banyak beres sekaligus), DeepSeek (spare token, tanpa jeda).
-
-## Terkait
-
-- Repo privat tim: `imantarsitek-dot/Arsitek` (tools, data, workflow)
-- Repo privat agent: `imantarsitek-dot/levia` (persona, memori, kurikulum Levia)
-- VAH: https://shimone666.github.io/vah-official/
+- Private team repo `imantarsitek-dot/Arsitek` — tools and source of truth.
+- Private agent repo `imantarsitek-dot/levia` — working notes and method.
