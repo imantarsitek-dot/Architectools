@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Authorization received</title>
+<link rel="stylesheet" href="/style.css"></head><body><div class="wrap">
+<header><div class="mk">Architectools</div><nav><a href="/">Catalog</a><a href="/levia">Design</a><a href="/contact">Contact</a></nav></header>
+<h1>Authorization received</h1>
+<p id="msg">Reading the response…</p>
+<pre id="out" style="white-space:pre-wrap;word-break:break-all;background:#f4f4f4;padding:12px;border-radius:6px"></pre>
+<p class="mute" id="hint" hidden>Copy the whole URL above and send it back. It can only be redeemed once, and it expires in minutes.</p>
+<footer><span>Architectools</span><span><a href="/privacy">Privacy</a></span></footer>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var code = q.get('code');
+  var err = q.get('error') || q.get('error_description');
+  var msg = document.getElementById('msg');
+  var out = document.getElementById('out');
+  var hint = document.getElementById('hint');
+  if (err) { msg.textContent = 'Authorization was not granted.'; out.textContent = decodeURIComponent(err); return; }
+  if (!code) { msg.textContent = 'No authorization code in this link.'; return; }
+  msg.textContent = 'Done. Copy the URL below.';
+  out.textContent = location.href;
+  hint.hidden = false;
+})();
+</script>
+</div></body></html>
